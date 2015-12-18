@@ -5,8 +5,9 @@
 sum:
 .LFB0:
 	.cfi_startproc
-	leal	(%rdi,%rsi), %eax
-	addl	%eax, accum(%rip)
+	movl	8(%esp), %eax
+	addl	4(%esp), %eax
+	addl	%eax, accum
 	ret
 	.cfi_endproc
 .LFE0:
