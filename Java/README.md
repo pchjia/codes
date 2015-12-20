@@ -1,3 +1,4 @@
 # Java 代码库
 ## 包含
-- Algorithms (forth edition) Robert Sedgewick & Kevin Wayne
+##### 1. Algorithms (Forth Edition) 算法 第四版 Sedgewick 作业答案
+- *Robert Sedgewick* & *Kevin Wayne* **homework solution**
