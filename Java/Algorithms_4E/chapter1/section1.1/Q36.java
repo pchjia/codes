@@ -20,8 +20,8 @@ class ShuffleTest{
 
         for(int i=0; i<M; i++){
             for(int j=0; j<M; j++){
-                ans[i][j] = (double)data[i][j]/(double)M;
-                System.out.print(ans[i][j] + "  ");
+                // ans[i][j] = (double)data[i][j]/(double)M;
+                System.out.print(data[i][j] + "  ");
             }
             System.out.println();
         }
@@ -35,9 +35,13 @@ class ShuffleTest{
 
     public static void count(int[][] data, double[] a){
         for(int i=0; i<data.length; i++){
-            for(int j=0; j<data[0].length; j++){
-                data[i][(int)a[j]] += 1;
+            // for(int j=0; j<data[0].length; j++){
+            for(int j=0; j<a.length; j++){
+                if(a[j] == (double)i){
+                    data[i][j] += 1;
+                }
             }
+            // }
         }
     }
 }
