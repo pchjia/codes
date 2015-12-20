@@ -62,7 +62,8 @@ import java.util.Random;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-public final class StdRandom {
+
+public final class Q37 {
 
     private static Random random;    // pseudo-random number generator
     private static long seed;        // pseudo-random number generator seed
