@@ -29,7 +29,7 @@ public class Interval2D {
 
     public void draw() {
         double[] xs = {x.lo(), x.lo(), x.hi(), x.hi()};
-        double[] ys = {y.lo(), y.lo()+y.length(), y.hi(), y.hi()+y.length()};
+        double[] ys = {y.lo(), y.hi(), y.hi(), y.lo()};
         StdDraw.polygon(xs, ys);
     }
 }

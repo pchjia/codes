@@ -5,6 +5,10 @@ public class Q3 {
         double max = Double.parseDouble(args[2]);
         Interval2D[] intervals = new Interval2D[N];
 
+        StdDraw.setXscale(-1.0, 1.0);
+        StdDraw.setYscale(-1.0, 1.0);
+        StdDraw.setPenRadius(0.002);
+
         for (int i=0; i<N; i++) {
             double[] vals = new double[4];
             vals[0] = StdRandom.uniform(min, max);
