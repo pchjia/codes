@@ -30,4 +30,8 @@ public class Interval1D {
     public void draw() {
         StdDraw.line(0.0, lo, 0.0, hi);
     }
+
+    public String toString() {
+        return "[" + lo + ", " + hi + "];";
+    }
 }
