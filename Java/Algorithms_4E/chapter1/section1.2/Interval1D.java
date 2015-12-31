@@ -7,6 +7,14 @@ public class Interval1D {
         this.hi = hi;
     }
     
+    public double lo() {
+        return lo;
+    }
+
+    public double hi() {
+        return hi;
+    }
+
     public double length() {
         return hi - lo;
     }
