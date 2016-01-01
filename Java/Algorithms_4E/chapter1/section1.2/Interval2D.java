@@ -7,6 +7,14 @@ public class Interval2D {
         this.y = y;
     }
 
+    public Interval1D x() {
+        return new Interval1D(x.lo(), x.hi());
+    }
+
+    public Interval1D y() {
+        return new Interval1D(y.lo(), y.hi());
+    }
+
     public double area() {
         return x.length() * y.length();
     }
