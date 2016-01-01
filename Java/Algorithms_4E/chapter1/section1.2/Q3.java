@@ -31,5 +31,32 @@ public class Q3 {
                 i--;
             }
         }
+
+        Counter inters = new Counter("inters");
+        Counter contains = new Counter("contains");
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<i; j++) {
+                if (intervals[i].intersect(intervals[j])) {
+                    inters.increment();
+                }
+
+                if ((intervals[i].x().lo() <= intervals[j].x().lo()) && 
+                        (intervals[i].x().hi() >= intervals[j].x().hi()) &&
+                        (intervals[i].y().lo() <= intervals[j].y().lo()) &&
+                        (intervals[i].y().hi() >= intervals[j].y().hi())) {
+                    contains.increment();        
+                }
+
+                if ((intervals[j].x().lo() <= intervals[i].x().lo()) && 
+                        (intervals[j].x().hi() >= intervals[i].x().hi()) &&
+                        (intervals[j].y().lo() <= intervals[i].y().lo()) &&
+                        (intervals[j].y().hi() >= intervals[i].y().hi())) {
+                    contains.increment();        
+                }
+            }
+        }
+
+        System.out.println(inters);
+        System.out.println(contains);
     }
 }
