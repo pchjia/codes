@@ -11,28 +11,25 @@ public class Q3 {
 
         for (int i=0; i<N; i++) {
             double[] vals = new double[4];
-            vals[0] = StdRandom.uniform(min, max);
-            vals[1] = StdRandom.uniform(min, max);
+            // x and y
+            vals[0] = StdRandom.uniform(-1.0, 1.0);
+            vals[1] = StdRandom.uniform(-1.0, 1.0);
+            // x -> width and y -> height
             vals[2] = StdRandom.uniform(min, max);
             vals[3] = StdRandom.uniform(min, max);
 
-            if (vals[0] > vals[1]) {
-                double val = vals[0];
-                vals[0] = vals[1];
-                vals[1] = val;
-            }
+            if ((vals[0] + vals[2] >= -1.0) &&
+                    (vals[0] + vals[2] <= 1.0) && 
+                    (vals[1] + vals[3] >= -1.0) &&
+                    (vals[1] + vals[3] <= 1.0)) {
+                Interval1D x = new Interval1D(vals[0], vals[0] + vals[2]);
+                Interval1D y = new Interval1D(vals[1], vals[1] + vals[3] );
 
-            if (vals[2] > vals[3]) {
-                double val = vals[2];
-                vals[2] = vals[3];
-                vals[3] = val;
+                intervals[i] = new Interval2D(x, y);
+                intervals[i].draw();
+            } else {
+                i--;
             }
-            
-            Interval1D x = new Interval1D(vals[0], vals[1]);
-            Interval1D y = new Interval1D(vals[2], vals[3]);
-
-            intervals[i] = new Interval2D(x, y);
-            intervals[i].draw();
         }
     }
 }
