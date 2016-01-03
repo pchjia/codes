@@ -12,7 +12,7 @@ class Date {
     }
 
     public Date(String s) {
-        String[] strs = s.split("\\s+");
+        String[] strs = s.split("/");
         month = Integer.parseInt(strs[0]);
         day = Integer.parseInt(strs[1]);
         year = Integer.parseInt(strs[2]);
