@@ -4,7 +4,6 @@ public class Q9 {
         Stack<String> output = new Stack<String>();
         Stack<String> outputVals = new Stack<String>();
         Stack<String> outputOpts = new Stack<String>();
-        Stack<String> tmp = new Stack<String>();
 
         while (!StdIn.isEmpty()) {
             input.push(StdIn.readString());
