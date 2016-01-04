@@ -80,12 +80,12 @@ public class UF {
             return;
         }
 
-        if (sz[p] < sz[q]) {
-            id[p] = qRoot;
-            sz[q] += sz[p];
+        if (sz[pRoot] < sz[qRoot]) {
+            id[pRoot] = qRoot;
+            sz[qRoot] += sz[p];
         } else {
-            id[q] = pRoot;
-            sz[p] += sz[q];
+            id[qRoot] = pRoot;
+            sz[pRoot] += sz[qRoot];
         }
 
         count --;
