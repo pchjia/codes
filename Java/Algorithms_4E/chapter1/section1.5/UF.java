@@ -102,6 +102,6 @@ public class UF {
                 StdOut.println(p + " " + q);
             }
         }
-        StdOut.println(uf.count() + "components");
+        StdOut.println(uf.count() + " components");
     }
 }
