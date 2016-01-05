@@ -29,7 +29,7 @@ public class QuickFindUF {
         int pID = find(p);
         int qID = find(q);
 
-        if (pID != qID) {
+        if (pID == qID) {
             return;
         }
 

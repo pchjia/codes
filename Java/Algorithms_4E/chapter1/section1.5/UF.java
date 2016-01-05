@@ -30,7 +30,7 @@ public class UF {
         int pID = find(p);
         int qID = find(q);
 
-        if (pID != qID) {
+        if (pID == qID) {
             return;
         }
 
