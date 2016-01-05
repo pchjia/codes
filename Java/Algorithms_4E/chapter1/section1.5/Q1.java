@@ -36,7 +36,7 @@ public class Q1 {
         int pID = find(p);
         int qID = find(q);
 
-        if (pID != qID) {
+        if (pID == qID) {
             return;
         }
 
@@ -62,7 +62,7 @@ public class Q1 {
                 StdOut.println(p + " " + q);
             }
         }
-        StdOut.println(uf.count() + " components");     // 10
-        StdOut.println(uf.idCount() + " visited id[]"); // 42
+        StdOut.println(uf.count() + " components");     // 2
+        StdOut.println(uf.idCount() + " visited id[]"); // 136
     }
 }
