@@ -17,7 +17,12 @@ public class SortCompare {
             Merge.sort(a);
         }
 
+        if (alg.equals("MergeBU")) {
+            MergeBU.sort(a);
+        }
+
 /*
+
         if (alg.equals("Quick")) {
             Quick.sort(a);
         }
