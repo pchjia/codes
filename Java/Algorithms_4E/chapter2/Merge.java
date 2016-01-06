@@ -14,6 +14,9 @@ public class Merge {
         int mid = lo + (hi - lo) / 2;
         sort(a, lo, mid);
         sort(a, mid+1, hi);
+        if (less(a[mid], a[mid+1]) || a[mid].equals(a[mid+1])) {
+            return;
+        }
         merge(a, lo, mid, hi);
     }
 
