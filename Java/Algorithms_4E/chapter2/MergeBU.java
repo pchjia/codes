@@ -6,7 +6,7 @@ public class MergeBU {
         aux = new Comparable[N];
         for (int sz=1; sz<N; sz = sz + sz) {
             for (int lo=0; lo<N-sz; lo += sz + sz) {
-                merge(a, lo, lo+sz-1, Math.min(lo+sz+sz+1, N-2));
+                merge(a, lo, lo+sz-1, Math.min(lo+sz+sz-1, N-1));
             }
         }
     }
