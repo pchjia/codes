@@ -4,7 +4,7 @@ public class Quick3way {
         sort(a, 0, a.length-1);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo ) {
             return;
         }
@@ -18,7 +18,7 @@ public class Quick3way {
             if (cmp < 0) {
                 exch(a, lt++, i++);
             } else if (cmp > 0) {
-                exch(a, i++, gt--);
+                exch(a, i, gt--);
             } else {
                 i++;
             }
