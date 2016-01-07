@@ -24,7 +24,7 @@ public class Quick {
                 }
             }
 
-            while (less(v, a[--hi])) {
+            while (less(v, a[--j])) {
                 if (j == lo) {
                     break;
                 }
