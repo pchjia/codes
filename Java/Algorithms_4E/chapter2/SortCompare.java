@@ -21,6 +21,10 @@ public class SortCompare {
             MergeBU.sort(a);
         }
 
+        if (alg.equals("Quick3way")) {
+            Quick3way.sort(a);
+        }
+
         if (alg.equals("Quick")) {
             Quick.sort(a);
         }
