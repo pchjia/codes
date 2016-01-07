@@ -18,7 +18,7 @@ public class Quick {
         int j = hi + 1;
         Comparable v = a[lo];
         while (true) {
-            while (less(a[++lo], v)) {
+            while (less(a[++i], v)) {
                 if (i == hi) {
                     break;
                 }

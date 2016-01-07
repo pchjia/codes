@@ -21,12 +21,11 @@ public class SortCompare {
             MergeBU.sort(a);
         }
 
-/*
-
         if (alg.equals("Quick")) {
             Quick.sort(a);
         }
 
+/*
         if (alg.equals("Heap")) {
             Heap.sort(a);
         }
