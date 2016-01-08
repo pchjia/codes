@@ -4,12 +4,12 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     @SuppressWarnings("unchecked")
     public MaxPQ() {
-        pq = (Key[]) new Object[1];
+        pq = (Key[]) new Comparable[2];
     }
 
     @SuppressWarnings("unchecked")
     public MaxPQ(int maxN) {
-        pq = (Key[]) new Object[maxN + 1];
+        pq = (Key[]) new Comparable[maxN + 1];
     }
 
     public boolean isEmpty() {
@@ -21,10 +21,10 @@ public class MaxPQ<Key extends Comparable<Key>> {
     }
 
     public void insert(Key v) {
-        if ((N-1) == pq.length) {
+        pq[++N] = v;
+        if (N == (pq.length-1)) {
             resize(pq.length*2);
         }
-        pq[++N] = v;
         swim(N);
     }
 
@@ -41,8 +41,8 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     @SuppressWarnings("unchecked")
     private void resize(int max) {
-        Key[] tmp = (Key[]) new Object[max];
-        for (int i=0; i<=N; i++) {
+        Key[] tmp = (Key[]) new Comparable[max];
+        for (int i=1; i<=N; i++) {
             tmp[i] = pq[i];
         }
         pq = tmp;
