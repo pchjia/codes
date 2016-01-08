@@ -28,15 +28,15 @@ public class MaxPQ<Key extends Comparable<Key>> {
         swim(N);
     }
 
-    public Key delMpqx() {
-        Key mpqx = pq[1];
+    public Key delMax() {
+        Key max = pq[1];
         exch(1, N--);
         pq[N+1] = null;
         sink(1);
         if (N > 0 && N < pq.length/4) {
             resize(pq.length/2);
         }
-        return mpqx;
+        return max;
     }
 
     @SuppressWarnings("unchecked")
