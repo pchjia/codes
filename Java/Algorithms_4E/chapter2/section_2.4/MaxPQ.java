@@ -75,4 +75,11 @@ public class MaxPQ<Key extends Comparable<Key>> {
         pq[i] = pq[j];
         pq[j] = t;
     }
+
+    public void show() {
+        for (int i=1; i<=N; i++) {
+            System.out.print(i + ": " + pq[i]);
+        }
+        System.out.println();
+    }
 }
