@@ -2,4 +2,4 @@
 
 - ### ScrapingWithPython 抓取网络信息
 - ### StaticAnalysis 数据分析
-- ### SelfPractise 联系项目
+- ### SelfPractise 练习项目
