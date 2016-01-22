@@ -4,9 +4,9 @@ from model import openurl
 
 def main():
     html = openurl("https://www.pchjia.com/index.html")
+    bs_obj = BeautifulSoup(html)
     if html:
-        bs_obj = BeautifulSoup(html)
-        title_list = bs_obj.find("", {"id":"posts"}).children
+        title_list = bs_obj.find("div", {"class":"post-body"}).children
         for title in title_list:
             print();
             print(title)
