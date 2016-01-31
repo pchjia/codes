@@ -1,21 +1,11 @@
-from urllib.request import urlopen
 from bs4 import BeautifulSoup
-from urllib.error import HTTPError
-from urllib.error import URLError
-from socket import gaierror
+
+from module import openurl
 
 def getTitle(url):
+    html = openurl(url)
     try:
-        html = urlopen(url)
-    except HTTPError:
-        return None
-    except gaierror:
-        return None
-    except URLError:
-        return None
-
-    try:
-        bsObj = BeautifulSoup(html.read())
+        bsObj = BeautifulSoup(html)
         title = bsObj.body.h1
     except AttributeError:
         return None
