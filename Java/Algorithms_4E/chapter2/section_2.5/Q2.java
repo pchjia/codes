@@ -13,6 +13,7 @@ public class Q2 {
 
         for (int i=0; i<len; i++) {
             for (int j=i+1; j<len; j++) {
+                // compounds
                 System.out.println(words[i] + words[j]);
             }
         }
