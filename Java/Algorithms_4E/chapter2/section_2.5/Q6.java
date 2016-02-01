@@ -11,7 +11,7 @@ public class Q6 {
             return a[j];
         } else if (j > k) {
             return select(a, k, lo, j-1);
-        } else if (j < k) {
+        } else {
             return select(a, k, j+1, hi);
         }
     }
