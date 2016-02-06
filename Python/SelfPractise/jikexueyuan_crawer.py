@@ -49,8 +49,7 @@ class Crawer:
 
     def add_classes(self, html):
         soup = BeautifulSoup(html, 'lxml')
-        new_soup = BeautifulSoup(str(soup.find_all("div", class_="lesson-list")[0]), 'lxml')
-        lessons = new_soup.findAll("div", class_="lesson-infor")
+        lessons = soup.findAll("div", class_="lesson-infor")
         for lesson in lessons:
             classes = {}
             bs_obj = BeautifulSoup(str(lesson), 'lxml')
@@ -62,7 +61,7 @@ class Crawer:
             classes['level'] = tmp[1].strip()
             learn_num = re.findall(r'>(.*?)</em', str(bs_obj.findAll(class_="learn-number")))[0]
             classes['learn_number'] = int(re.sub(u'人学习', '', learn_num))
-            classes['url'] = re.findall(r'href="(.*?)"', str(bs_obj.a))[0]
+            classes['url'] = bs_obj.a['href']
             self.class_info.append(classes)
 
 
