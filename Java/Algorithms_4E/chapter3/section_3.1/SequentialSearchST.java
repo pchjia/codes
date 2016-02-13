@@ -11,6 +11,8 @@ public class SequentialSearchST <Key, Value> {
         }
     }
 
+    public SequentialSearchST() {}
+
     public Value get(Key key) {
         for (Node x=first; x!=null; x=x.next) {
             if (key.equals(x.key)) {
@@ -28,5 +30,15 @@ public class SequentialSearchST <Key, Value> {
             }
         }
         first = new Node(key, val, first);
+    }
+
+    public Iterable<Key> keys() {
+        Queue<Key> q = new Queue<Key>();
+        Node tmp = first;
+        while (tmp != null) {
+            q.enqueue(tmp.key);
+            tmp = tmp.next;
+        }
+        return q;
     }
 }
