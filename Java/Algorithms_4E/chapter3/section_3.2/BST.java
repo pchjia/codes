@@ -4,6 +4,17 @@ import java.util.LinkedList;
 public class BST <Key extends Comparable<Key>, Value> {
     private Node root;
 
+    public static void main(String[] args) {
+        BST<String, Integer> bst = new BST<String, Integer>();
+        for(int i=0; i<args.length; i++) {
+            bst.put(args[i], new Integer(i));
+        }
+
+        for(String key: bst.keys()) {
+            System.out.println(key + " " + bst.get(key));
+        }
+    }
+
     private class Node {
         private Key key;
         private Value val;
@@ -17,11 +28,11 @@ public class BST <Key extends Comparable<Key>, Value> {
             this.N = N;
         }
     }
+
     public int size() {
         return size(root);
     }
-
-    public int size(Node node) {
+    private int size(Node node) {
         if (node == null) {
             return 0;
         }
