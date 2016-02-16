@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Iterator;
 
 public class Queue<Item> implements Iterable<Item> {
@@ -40,14 +41,14 @@ public class Queue<Item> implements Iterable<Item> {
         N --;
         return item;
     }
-    
+
     public Iterator<Item> iterator() {
         return new ListIterator();
     }
 
     private class ListIterator implements Iterator<Item> {
         private Node current = first;
-        
+
         public boolean hasNext() {
             return current != null;
         }
@@ -61,15 +62,16 @@ public class Queue<Item> implements Iterable<Item> {
 
     public static void main (String[] args) {
         Queue<String> s = new Queue<String>();
+        Scanner in = new Scanner(System.in);
 
-        while (!StdIn.isEmpty()) {
-            String item = StdIn.readString();
+        while (in.hasNext()) {
+            String item = in.next();
             if (!item.equals("-")) {
                 s.enqueue(item);
             } else if (!s.isEmpty()) {
-                StdOut.print(s.dequeue() + " ");
+                System.out.print(s.dequeue() + " ");
             }
         }
-        StdOut.println("(" + s.size() + " left on stack)");
+        System.out.println("(" + s.size() + " left on stack)");
     }
 }

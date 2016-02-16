@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Iterator;
 
 public class Stack<Item> implements Iterable<Item> {
@@ -38,7 +39,7 @@ public class Stack<Item> implements Iterable<Item> {
 
     private class ListIterator implements Iterator<Item> {
         private Node current = first;
-        
+
         public boolean hasNext() {
             return current != null;
         }
@@ -52,15 +53,16 @@ public class Stack<Item> implements Iterable<Item> {
 
     public static void main (String[] args) {
         Stack<String> s = new Stack<String>();
+        Scanner in = new Scanner(System.in);
 
-        while (!StdIn.isEmpty()) {
-            String item = StdIn.readString();
+        while (in.hasNext()) {
+            String item = in.next();
             if (!item.equals("-")) {
                 s.push(item);
             } else if (!s.isEmpty()) {
-                StdOut.print(s.pop() + " ");
+                System.out.print(s.pop() + " ");
             }
         }
-        StdOut.println("(" + s.size() + " left on stack)");
+        System.out.println("(" + s.size() + " left on stack)");
     }
 }

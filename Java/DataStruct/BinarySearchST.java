@@ -82,14 +82,6 @@ public class BinarySearchST <Key extends Comparable<Key>, Value> {
         return keys[i];
     }
 
-    public Key floor(Key key) {
-         int i = rank(key);
-    }
-
-    public Key delete(Key key) {
-
-    }
-
     public Iterable<Key> keys(Key lo, Key hi) {
          Queue<Key> q = new Queue<Key>();
          for (int i=rank(lo); i<rank(hi); i++) {

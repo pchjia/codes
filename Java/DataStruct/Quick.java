@@ -1,7 +1,17 @@
+import java.util.Random;
+
 public class Quick {
     public static void sort(Comparable[] a) {
-        StdRandom.shuffle(a);
+        shuffle(a);
         sort(a, 0, a.length-1);
+    }
+
+    private static void shuffle(Comparable[] a) {
+        Random ran = new Random();
+        int N = a.length;
+        for (int i=0; i<N; i++) {
+            exch(a, ran.nextInt(N), i);
+        }
     }
 
     public static void sort(Comparable[] a, int lo, int hi) {
@@ -39,6 +49,7 @@ public class Quick {
         return j;
     }
 
+    @SuppressWarnings("unchecked")
     public static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
     }
@@ -66,7 +77,7 @@ public class Quick {
     }
 
     public static void main (String[] args) {
-        String[] a = In.readStrings();
+        String[] a = args;
         sort(a);
         assert isSorted(a);
         show(a);
