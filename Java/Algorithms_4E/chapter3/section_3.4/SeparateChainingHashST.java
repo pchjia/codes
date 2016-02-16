@@ -40,6 +40,12 @@ public class SeparateChainingHashST <Key, Value> {
         return q;
     }
 
+    public void delete(Key key) {
+        if (get(key) != null) {
+            st[hash(key)].delete(key);
+        }
+    }
+
     public static void main(String[] args) {
         int N = args.length;
         SeparateChainingHashST<String, Integer> scHash = new SeparateChainingHashST<>(N);
@@ -50,6 +56,11 @@ public class SeparateChainingHashST <Key, Value> {
 
         for (String key: scHash.keys()) {
             System.out.println(key + " " + scHash.get(key));
+        }
+
+        for (String key: scHash.keys()) {
+            System.out.println("deleting " + key);
+            scHash.delete(key);
         }
     }
 }
