@@ -1,3 +1,6 @@
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class SequentialSearchST <Key, Value> {
     private Node first;
     private class Node {
@@ -33,10 +36,10 @@ public class SequentialSearchST <Key, Value> {
     }
 
     public Iterable<Key> keys() {
-        Queue<Key> q = new Queue<Key>();
+        Queue<Key> q = new LinkedList<Key>();
         Node tmp = first;
         while (tmp != null) {
-            q.enqueue(tmp.key);
+            q.add(tmp.key);
             tmp = tmp.next;
         }
         return q;
