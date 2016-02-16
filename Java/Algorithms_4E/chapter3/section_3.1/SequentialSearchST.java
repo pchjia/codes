@@ -35,6 +35,26 @@ public class SequentialSearchST <Key, Value> {
         first = new Node(key, val, first);
     }
 
+    public void delete(Key key) {
+        if (first == null) {
+            return;
+        }
+
+        if ((first != null) && (first.next == null)) {
+            if (key.equals(first.key)) {
+                first = null;
+                return;
+            }
+        }
+
+        for (Node x=first; x.next!=null; x=x.next) {
+            if (key.equals(x.next.key)) {
+                x.next = x.next.next;
+                return;
+            }
+        }
+    }
+
     public Iterable<Key> keys() {
         Queue<Key> q = new LinkedList<Key>();
         Node tmp = first;
