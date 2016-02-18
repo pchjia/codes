@@ -21,7 +21,7 @@ public class LookupCSV {
 
             Scanner in = new Scanner(System.in);
             while (in.hasNext()) {
-                 String query = in.next();
+                 String query = in.nextLine();
                  String res = hst.get(query);
                  System.out.println(res);
             }
