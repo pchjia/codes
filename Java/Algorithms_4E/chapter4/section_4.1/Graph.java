@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ public class Graph {
     public Graph(int V) {
         this.V = V;
         this.E = 0;
-        adj = (LinkedList<Integer> []) new Object[V];
+        adj = (LinkedList<Integer> []) new LinkedList[V];
         for (int i=0; i<V; i++) {
             adj[i] = new LinkedList<Integer>();
         }
@@ -24,6 +26,10 @@ public class Graph {
             int w = in.nextInt();
             addEdge(v, w);
         }
+    }
+
+    public Graph(String filename) throws IOException {
+        this(new Scanner(new File(filename)));
     }
 
     public int V() {
