@@ -9,11 +9,11 @@ public class CC {
     public static void main(String[] args) {
         Graph G = null;
         try{
-            Graph tmp = new Graph(args[0]);
-            G = tmp;
+            G = new Graph(args[0]);
         } catch (IOException e) {
             System.out.println("File not found.");
             e.printStackTrace();
+            System.exit(-1);
         }
         CC cc = new CC(G);
 
