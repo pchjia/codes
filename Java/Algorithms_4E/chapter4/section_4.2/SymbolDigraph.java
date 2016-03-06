@@ -12,7 +12,7 @@ public class SymbolDigraph {
         String filename = args[0];
         String sep = args[1];
 
-        SymbolGraph sg = new SymbolGraph(filename, sep);
+        SymbolDigraph sg = new SymbolDigraph(filename, sep);
         Digraph G = sg.G();
 
         Scanner in = new Scanner(System.in);
@@ -28,7 +28,7 @@ public class SymbolDigraph {
         }
     }
 
-    public SymbolGraph(String filename, String sep) {
+    public SymbolDigraph(String filename, String sep) {
         hm = new HashMap<String, Integer>();
         Scanner in = null;
         try {
