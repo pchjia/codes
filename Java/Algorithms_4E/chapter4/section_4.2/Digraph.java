@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class Digraph {
     private final int V;
@@ -13,6 +14,18 @@ public class Digraph {
         for (int v=0; v<V; v++) {
             adj[v] = new HashSet<Integer>();
         }
+    }
+
+    public Digraph(Scanner in) {
+        this(in.nextInt());
+        E = in.nextInt();
+        while (in.hasNext()) {
+            addEdge(in.nextInt(), in.nextInt());
+        }
+    }
+
+    public Digraph(String filename) {
+        this(new Scanner(filename));
     }
 
     public int V() {
