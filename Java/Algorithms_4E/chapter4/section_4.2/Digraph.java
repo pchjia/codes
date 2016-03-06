@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -24,8 +26,8 @@ public class Digraph {
         }
     }
 
-    public Digraph(String filename) {
-        this(new Scanner(filename));
+    public Digraph(String filename) throws IOException{
+        this(new Scanner(new File(filename)));
     }
 
     public int V() {
