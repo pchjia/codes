@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashSet;
 
@@ -5,8 +6,13 @@ public class DirectedDFS {
     private boolean[] marked;
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(args[0]);
-        Digraph G = new Digraph(in);
+        Digraph G = null;
+        try {
+            G = new Digraph(args[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
 
         HashSet<Integer> sources = new HashSet<Integer>();
         for (int i=1; i<args.length; i++) {
@@ -17,7 +23,7 @@ public class DirectedDFS {
 
         for (int v=0; v<G.V(); v++) {
             if (reachable.marked(v)) {
-                System.out.print(v + "");
+                System.out.print(v + " ");
             }
         }
         System.out.println();
@@ -40,7 +46,7 @@ public class DirectedDFS {
     private void dfs(Digraph G, int v) {
         marked[v] = true;
         for (int w: G.adj(v)) {
-            if (!marked(v)) {
+            if (!marked(w)) {
                 dfs(G, w);
             }
         }
